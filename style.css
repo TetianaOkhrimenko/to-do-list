@@ -29,6 +29,7 @@ body {
 
 .task-title {
   font-size: 28px;
+  line-height: 1.2;
   font-weight: 500;
   color: #3a0077;
 }
@@ -144,5 +145,20 @@ body {
 @media (max-width: 600px) {
   .container {
     width: 90%;
+  }
+}
+
+@media (max-width: 400px) {
+  .task-title {
+    font-size: 22px;
+  }
+
+  .heading-box {
+    margin-bottom: 10px;
+  }
+
+  .btn,
+  .clear-tasks {
+    width: 100%;
   }
 }
