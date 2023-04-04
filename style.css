@@ -140,3 +140,9 @@ body {
   margin-right: 10px;
   align-self: center;
 }
+
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+}
