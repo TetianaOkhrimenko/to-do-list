@@ -65,6 +65,7 @@ body {
 
 .btn,
 .clear-tasks {
+  width: 50%;
   border-radius: 5px;
   background-color: #a393eb;
   padding: 10px 20px;
@@ -86,9 +87,6 @@ body {
 
 .create-task-block {
   margin-bottom: 20px;
-}
-
-.filter-task-block {
 }
 
 .collection {
@@ -146,6 +144,11 @@ body {
   .container {
     width: 90%;
   }
+
+  .btn,
+  .clear-tasks {
+    width: 100%;
+  }
 }
 
 @media (max-width: 400px) {
@@ -155,10 +158,5 @@ body {
 
   .heading-box {
     margin-bottom: 10px;
-  }
-
-  .btn,
-  .clear-tasks {
-    width: 100%;
   }
 }
