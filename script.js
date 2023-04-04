@@ -19,32 +19,19 @@ const getTasksFromLocalStorage = () => {
 const storeTaskInLocalStorage = (task) => {
   const tasks = getTasksFromLocalStorage();
   tasks.push(task);
-
   localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
 };
 
 //edit task in Local Storage
 let editTaskInLocalStorage = (editedTask, index) => {
   const tasks = getTasksFromLocalStorage();
-
-  //let editIndexStorage = tasks.findIndex((task, i) => i === index);
-  //let editElement = tasks.find((task, i) => i === editIndexStorage);
   tasks[index] = editedTask;
-  //console.log(tasks);
-
   localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
 };
 
 //removeTaskFromLocalStorage приймає два аргументи - видалений елемент і індекс -  Tania's comment
 const removeTaskFromLocalStorage = (deletedTask, index) => {
   const tasks = getTasksFromLocalStorage();
-
-  // other variant .filter
-  //const deletedIndex = tasks.findIndex((task) => task === deletedTask);
-  //if (deletedIndex === index) {
-  //  tasks.splice(deletedIndex, 1);
-  //}
-
   tasks.splice(index, 1);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
 };
@@ -67,10 +54,10 @@ const getTasks = () => {
     taskText.innerHTML = '<i class="fa fa-remove"></i>';
     li.append(taskText);
 
-    const editIcon = document.createElement("span");
-    editIcon.className = "edit-item";
-    editIcon.innerHTML = '<i class="fa fa-edit"></i>';
-    li.append(editIcon);
+    const editedIcon = document.createElement("span");
+    editedIcon.className = "edit-item";
+    editedIcon.innerHTML = '<i class="fa fa-edit"></i>';
+    li.append(editedIcon);
 
     // Append li to ul
     taskList.append(li);
@@ -97,11 +84,10 @@ const addTask = (event) => {
 
   taskList.append(li);
 
-  //Create icon for adding near element - Tania's comment
-  const editIcon = document.createElement("span");
-  editIcon.className = "edit-item";
-  editIcon.innerHTML = '<i class="fa fa-edit"></i>';
-  li.append(editIcon);
+  const editedIcon = document.createElement("span");
+  editedIcon.className = "edit-item";
+  editedIcon.innerHTML = '<i class="fa fa-edit"></i>';
+  li.append(editedIcon);
 
   // Save to storage
   storeTaskInLocalStorage(taskInput.value);
@@ -134,9 +120,9 @@ const removeTask = (event) => {
 };
 
 const editTask = (event) => {
-  const isEditIcon = event.target.classList.contains("fa-edit");
+  const isEditedIcon = event.target.classList.contains("fa-edit");
 
-  if (isEditIcon) {
+  if (isEditedIcon) {
     let editedLi = event.target.closest("li");
     let newText = prompt("Edit your task here", editedLi.textContent);
     editedLi.firstChild.textContent = newText.trim();
