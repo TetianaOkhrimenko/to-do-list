@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <title>To do List📄</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="create-task-block">
+        <form class="create-task-form">
+          <div class="heading-box">
+            <h3 class="task-title">Нове завдання</h3>
+            <img
+              src="./images/task_icon.svg"
+              class="heading-icon"
+              alt="Task icon"
+            />
+          </div>
+          <div class="box">
+            <div class="input-field">
+              <input type="text" name="task" class="task-input" />
+            </div>
+            <button type="submit" class="btn">Додати завдання</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="filter-task-block">
+        <div class="heading-box">
+          <h3 class="task-title">Список завдань</h3>
+          <img
+            src="./images/list_icon.svg"
+            class="heading-icon"
+            alt="Task icon"
+          />
+        </div>
+        <div class="input-field">
+          <input
+            type="text"
+            name="filter"
+            class="filter-input"
+            placeholder="Пошук завдань"
+          />
+        </div>
+        <ul class="collection"></ul>
+        <button class="clear-tasks">Видалити всі завдання</button>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
