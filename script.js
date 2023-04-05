@@ -100,7 +100,7 @@ const removeTask = (event) => {
   const isDeleteIcon = event.target.classList.contains("fa-remove");
 
   if (isDeleteIcon) {
-    const isApproved = confirm("Ви впевнені що хочете видалити це завдання?");
+    const isApproved = confirm("Ви впевнені, що хочете видалити це завдання?");
 
     if (isApproved) {
       // remove from DOM
@@ -124,7 +124,10 @@ const editTask = (event) => {
 
   if (isEditedIcon) {
     let editedLi = event.target.closest("li");
-    let newText = prompt("Edit your task here", editedLi.textContent);
+    let newText = prompt(
+      "Ви можете відредагувати ваше завдання!",
+      editedLi.textContent
+    );
     editedLi.firstChild.textContent = newText.trim();
     let listLi = Array.from(document.querySelectorAll(".collection-item"));
     let indexOfEditedLi = listLi.findIndex((li) => li === editedLi);
