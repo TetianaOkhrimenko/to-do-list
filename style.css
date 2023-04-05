@@ -160,4 +160,8 @@ body {
   .heading-box {
     margin-bottom: 10px;
   }
+
+  .collection-item {
+    grid-template-columns: 8% 76% 8% 8%;
+  }
 }
